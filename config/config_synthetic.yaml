@@ -1,0 +1,60 @@
+# Configurations
+
+# General experiment configurations
+exp:
+  nuisance_models_train_flag: true
+  start_trial: 0
+  num_trials: 20
+  global_seed: 0                    # global seed
+  global_num_epochs: 1000
+  patience: 10                # early stopping patience
+  exp_feature: work.dur
+  wandb_project: Synthetic_CTLD
+  wandb_run_name: CTLD_v0
+  wandb_mode: online
+  device: cuda
+
+log_gammas:
+  "0.1": 0.0
+  "0.5": 0.5
+  "1.0": 1.0
+  "1.5": 1.5
+  "2.0": 2.0
+  "2.5": 2.5
+  "3.0": 3.0
+  "3.5": 3.5
+  "4.0": 4.0
+
+
+# Data
+data:
+  n_samples_train: 5000
+  nuisance_split: 0.5
+  val_split: 0.2
+  n_samples_test: 5000
+  n_features: 5
+  n_treatments: 2
+  seed: 42
+  batch_size: 16
+
+# Estimator model configuration
+nuisance_estimator:
+  input_dim: ${data.n_features}
+  n_treatments: ${data.n_treatments}
+  num_epochs: ${exp.global_num_epochs}
+  patience: ${exp.patience}
+  batch_size: ${data.batch_size}
+  device: ${exp.device}
+  propensity_model:
+    lr: 5e-4
+  quantile_model:
+    lr: 1e-3
+  outcome_model:
+    lr: 1e-3
+
+trainer:
+  max_epochs: ${nuisance_estimator.num_epochs}
+  enable_checkpointing: false
+  logger: false
+  accelerator: gpu
+  devices: 1
