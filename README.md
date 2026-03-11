@@ -1,6 +1,5 @@
 # A Causal Target for Learning to Defer under Hidden Confounding
 
-[![Conference](https://img.shields.io/badge/AAAI-Submission-blue.svg)](https://aaai.org/)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/Framework-PyTorch-red.svg)](https://pytorch.org/)
 
@@ -12,7 +11,7 @@ This repository contains the official implementation for our paper, "A Causal Ta
 
 ## Framework Overview
 ![ctld_framework.png](ctld_framework.png)
-*Figure 1: An overview of the CTLD framework. To learn a deferral policy under hidden confounding, our CTLD method proceeds in three key steps: First, we estimate sharp bounds on potential outcomes to quantify causal uncertainty; second, we leverage these bounds to construct a novel causal target; and ﬁnally, we train a policy to match this target using a tailored optimization procedure.*
+*Figure 1: An overview of the CTLD framework.*
 ---
 
 ## Requirements & Setup
