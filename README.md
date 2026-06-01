@@ -64,3 +64,19 @@ python ihdp_experiment_ctld.py
 # Run CTLD on the HELOC dataset
 python heloc_experiment_ctld.py
 ```
+
+
+## Citation
+
+```latex
+@article{Li_2026_aaai,
+    author={Li, Yanmin and Liu, Lihua and Wang, Xin and Mao, Zhilong and Wu, Jibing and Bao, Weidong},
+    title={A Causal Target for Learning to Defer Under Hidden Confounding},
+    journal={Proceedings of the AAAI Conference on Artificial Intelligence},
+    volume={40},
+    number={28},
+    year={2026},
+    month={Mar.},
+    pages={23248–23255}
+}
+```
